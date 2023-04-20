@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "885939654242",
+    "project_id": "avesdgo-a265a",
+    "storage_bucket": "avesdgo-a265a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885939654242:android:ae8c8fb548666ce72f8b3b",
+        "android_client_info": {
+          "package_name": "com.example.avesdgobd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885939654242-3esrertvf07bjphfstl1is8otfp3niup.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.avesdgobd",
+            "certificate_hash": "92bdf4212ff82de9538804941f4df6ec5888c8e3"
+          }
+        },
+        {
+          "client_id": "885939654242-adadkvso8l5snm0tbcim3hicpt12c1gc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTlO_NDZ2RCiGAy7-lhHNDlM6mvqEVN3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885939654242-adadkvso8l5snm0tbcim3hicpt12c1gc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
