@@ -31,11 +31,11 @@ class ListaDatos extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10.0)),
                     elevation: 10,
                     margin: EdgeInsets.all(10),
-                    child: new Column(
+                    child: Column(
                       children: [
                         Image.network(data['foto']),
                         ListTile(
-                          title: Text("Nombre común: " + data['nombrecomun']),
+                          title: Text("Nombre común: " + data['nombrecomun'], style: TextStyle(fontSize: 20.0),),
                           //leading: Icon(Icons.favorite,color: Colors.red,),
                           subtitle: Text(
                             "Nombre científico: " +
@@ -55,7 +55,7 @@ class ListaDatos extends StatelessWidget {
                                 data['nombrecreador'],
                                 document.id);
                           },
-                          child: Text('Editar'),
+                          child: Text('Editar Datos'),
                           style: ButtonStyle(
                             backgroundColor:
                                 MaterialStateProperty.all<Color>(Colors.green),
@@ -65,7 +65,7 @@ class ListaDatos extends StatelessWidget {
                           onPressed: () {
                             eliminarDatos(context, document.id);
                           },
-                          child: Text('Eliminar'),
+                          child: Text('Eliminar Tarjeta'),
                           style: ButtonStyle(
                             backgroundColor:
                                 MaterialStateProperty.all<Color>(Colors.red),
@@ -85,13 +85,13 @@ void eliminarDatos(BuildContext context, String uid) {
       context: context,
       builder: (BuildContext builder) {
         return AlertDialog(
-          title: Text("Confirmar eliminación"),
-          content: Text("¿Estás seguro de que deseas eliminar esta Ave?"),
+          title: Text("Confirmar"),
+          content: Text("¿Estás seguro de que deseas eliminar esta tarjeta?"),
           actions: [
             TextButton(
               child: Text(
                 "Cancelar",
-                style: TextStyle(color: Colors.amber),
+                style: TextStyle(color: Colors.red),
               ),
               onPressed: () {
                 Navigator.of(context).pop();
@@ -99,8 +99,8 @@ void eliminarDatos(BuildContext context, String uid) {
             ),
             TextButton(
               child: Text(
-                "Eliminar",
-                style: TextStyle(color: Colors.amber),
+                "Eliminar tarjeta",
+                style: TextStyle(color: Colors.red),
               ),
               onPressed: () {
                 //Se agrega el metodo eliminarRegistro
@@ -120,7 +120,7 @@ Future<void> eliminarDocumento(String uid) async {
   Future.delayed(Duration(seconds: 3), () {
     return baseDatos.doc(uid).delete();
   });
-  print("Se ha eliminado el documento");
+  print("Se ha eliminado la tarjeta");
 }
 
 //Método para mostrar el error de los textfields
@@ -136,7 +136,7 @@ void actualizarDatos(BuildContext context, String nombrecomun,
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Captura de nuevo los datos',
+        title: Text('Captura de nuevo los datos de la tarjeta',
             style: TextStyle(fontSize: 20.0)),
         content: Column(
           children: [
@@ -145,7 +145,7 @@ void actualizarDatos(BuildContext context, String nombrecomun,
               controller: controladorNombreComun,
               keyboardType: TextInputType.name,
               decoration: InputDecoration(
-                  icon: Icon(Icons.add),
+                  icon: Icon(Icons.add_circle),
                   border: OutlineInputBorder(),
                   labelText: "Nombre Común"),
             ),
@@ -154,7 +154,7 @@ void actualizarDatos(BuildContext context, String nombrecomun,
               controller: controladorNombreCientifico,
               keyboardType: TextInputType.name,
               decoration: InputDecoration(
-                  icon: Icon(Icons.add),
+                  icon: Icon(Icons.add_circle),
                   border: OutlineInputBorder(),
                   labelText: "Nombre Cientifico"),
             ),
@@ -163,7 +163,7 @@ void actualizarDatos(BuildContext context, String nombrecomun,
               controller: controladorNombreCreador,
               keyboardType: TextInputType.name,
               decoration: InputDecoration(
-                  icon: Icon(Icons.add),
+                  icon: Icon(Icons.account_circle),
                   border: OutlineInputBorder(),
                   labelText: "Créditos"),
             ),

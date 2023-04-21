@@ -47,9 +47,9 @@ class MiFormulario extends State <Formulario> {
                   controller: controladorNombreComun,
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
-                      icon: Icon(Icons.add),
+                      icon: Icon(Icons.add_circle),
                       border:OutlineInputBorder(),
-                      labelText: "Nombre Comun"
+                      labelText: "Nombre Comun",
                   ),
                 ),
                 Padding(padding: EdgeInsets.all(10.00)),
@@ -57,7 +57,7 @@ class MiFormulario extends State <Formulario> {
                   controller: controladorNombreCientifico ,
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
-                      icon: Icon(Icons.add),
+                      icon: Icon(Icons.add_circle),
                       border:OutlineInputBorder(),
                       labelText: "Nombre Cientifico"
                   ),
@@ -67,7 +67,7 @@ class MiFormulario extends State <Formulario> {
                   controller: controladorNombreCreador ,
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
-                      icon: Icon(Icons.add),
+                      icon: Icon(Icons.account_circle),
                       border:OutlineInputBorder(),
                       labelText: "Creditos"
                   ),
@@ -95,7 +95,10 @@ class MiFormulario extends State <Formulario> {
                         "Nombre Científico"
                     );
                   }
-                }, child: Text('Registrar'))
+                }, child: Text('Registrar'),
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.green))
+                    )
               ],
             ),
           )

@@ -127,6 +127,7 @@ class MisFotos extends State<Fotos> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
         onPressed: () {
           showSelectionDialog(context);
         },
